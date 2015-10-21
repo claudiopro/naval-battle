@@ -17,4 +17,11 @@ describe('the board module', function() {
       expect(console.log).toHaveBeenCalled();
     });
   });
+
+  describe('the hasShips() method', function() {
+    it('returns true after init', function() {
+      board.init();
+      expect(board.hasShips()).toBeTruthy();
+    });
+  });
 });

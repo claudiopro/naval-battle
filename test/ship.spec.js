@@ -22,6 +22,48 @@ describe('the Ship class', function() {
     });
   });
 
+  describe('the isAfloat() method', function() {
+    it('returns true when the ship is brand new', function() {
+      var ship = new Ship(1);
+      expect(ship.isAfloat()).toBeTruthy();
+    });
+
+    it('returns true when the ship has been hit fewer times than its size', function() {
+      var ship;
+
+      ship = new Ship(1);
+      expect(ship.isAfloat()).toBeTruthy();
+
+      ship = new Ship(2);
+      ship.hit();
+      expect(ship.isAfloat()).toBeTruthy();
+
+      ship = new Ship(3);
+      ship.hit();
+      ship.hit();
+      expect(ship.isAfloat()).toBeTruthy();
+    });
+
+    it('returns false when the ship has been hit as much as its size', function() {
+      var ship;
+
+      ship = new Ship(1);
+      ship.hit();
+      expect(ship.isAfloat()).toBeFalsy();
+
+      ship = new Ship(2);
+      ship.hit();
+      ship.hit();
+      expect(ship.isAfloat()).toBeFalsy();
+
+      ship = new Ship(3);
+      ship.hit();
+      ship.hit();
+      ship.hit();
+      expect(ship.isAfloat()).toBeFalsy();
+    });
+  });
+
   describe('the fits() method', function() {
     var grid, ship;
     const W = constants.WATER;
