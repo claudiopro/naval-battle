@@ -22,6 +22,8 @@ The application accepts input from the user in the format “A5” to signify a 
 Requires [Node.js](https://nodejs.org), tested with `v4.1.0`. [`nvm`](https://www.npmjs.com/package/nvm) is recommended.
 
 ```bash
+git clone git@github.com:claudiopro/naval-battle.git
+cd naval-battle
 npm install
 ./index.js
 ```

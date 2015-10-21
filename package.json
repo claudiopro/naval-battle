@@ -23,5 +23,24 @@
     "karma-jasmine": "^0.3.6",
     "karma-phantomjs-launcher": "^0.2.1",
     "phantomjs": "^1.9.18"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/claudiopro/naval-battle.git"
+  },
+  "keywords": [
+    "game",
+    "battleships",
+    "node",
+    "karma",
+    "jasmine",
+    "board-game"
+  ],
+  "bugs": {
+    "url": "https://github.com/claudiopro/naval-battle/issues"
+  },
+  "homepage": "https://github.com/claudiopro/naval-battle#readme"
 }
