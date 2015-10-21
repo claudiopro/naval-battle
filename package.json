@@ -4,7 +4,12 @@
   "description": "A simple naval battle game",
   "main": "index.js",
   "scripts": {
-    "test": "karma start --single-run karma.conf.js"
+    "pretest": "npm install",
+    "pretest-single-run": "npm install",
+    "pretest-ci": "npm install",
+    "test": "karma start karma.conf.js",
+    "test-single-run": "karma start karma.conf.js --single-run",
+    "test-ci": "karma start karma.conf.js --single-run --browsers PhantomJS"
   },
   "author": "Claudio Procida",
   "license": "MIT",
@@ -14,6 +19,8 @@
     "karma-chrome-launcher": "^0.2.1",
     "karma-cli": "^0.1.1",
     "karma-commonjs": "0.0.13",
-    "karma-jasmine": "^0.3.6"
+    "karma-jasmine": "^0.3.6",
+    "karma-phantomjs-launcher": "^0.2.1",
+    "phantomjs": "^1.9.18"
   }
 }
