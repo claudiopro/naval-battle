@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/claudiopro/naval-battle.svg?branch=master)](https://travis-ci.org/claudiopro/naval-battle)
+
 # naval-battle
 
 A very simple game of battleships ( http://en.wikipedia.org/wiki/Battleship_(game) ). If you’ve never played the game, you can get a feel for it from this online flash game ( http://www.learn4good.com/games/board/battleship.htm ). The program is a simple console application that allows a single human player to play a one-sided game of battleships against the computer. The program creates a 10x10 grid, and places a number of ships on the grid at random with the following sizes:
@@ -16,6 +18,8 @@ The application accepts input from the user in the format “A5” to signify a 
 * `usage` - Prints usage instructions
 
 ## Run
+
+Requires [Node.js](https://nodejs.org), tested with `v4.1.0`. [`nvm`](https://www.npmjs.com/package/nvm) is recommended.
 
 ```bash
 npm install
