@@ -20,6 +20,12 @@ describe('the util module', function() {
     it('translates a letter into an index - uppercase', function() {
       verify(true);
     });
+
+    it('returns -1 for letters out of range', function() {
+      expect(util.atoi('k')).toEqual(-1);
+      expect(util.atoi('z')).toEqual(-1);
+      expect(util.atoi('#')).toEqual(-1);
+    });
   });
 
   describe('the itoa method', function() {
@@ -32,6 +38,11 @@ describe('the util module', function() {
 
     it('translates an index into a letter', function() {
       verify();
+    });
+
+    it('returns an empty string for indices out of range', function() {
+      expect(util.itoa(-1)).toEqual('');
+      expect(util.itoa(11)).toEqual('');
     });
   });
 });
