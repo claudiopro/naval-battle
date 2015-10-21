@@ -1,5 +1,8 @@
 // Karma configuration
 // Generated on Wed Oct 21 2015 02:33:17 GMT+0200 (CEST)
+
+var istanbul = require('browserify-istanbul');
+
 module.exports = function(config) {
 	config.set({
 
@@ -9,6 +12,7 @@ module.exports = function(config) {
 		plugins: [
 			'karma-chrome-launcher'
       , 'karma-phantomjs-launcher'
+			, 'karma-coverage'
       , 'karma-jasmine'
 			, 'karma-browserify'
 		],
@@ -32,27 +36,28 @@ module.exports = function(config) {
 		// list of files to exclude
 		exclude: [
       'index.js'
+			, 'karma.conf.js'
     ],
 
 
 		// preprocess matching files before serving them to the browser
 		// available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
 		preprocessors: {
-			'*.js' : [/*'coverage',*/ 'browserify']
+			'*.js' : ['browserify']
 			, './test/*.spec.js' : ['browserify']
 		},
 
-		// coverageReporter: {
-		// 	type : 'cobertura'
-		// 	, dir : '../coverage'
-		// },
+		coverageReporter: {
+			type : 'html'
+			, dir : './coverage'
+		},
 
 		// test results reporter to use
 		// possible values: 'dots', 'progress'
 		// available reporters: https://npmjs.org/browse/keyword/karma-reporter
 		reporters: [
 			'progress'
-			// , 'coverage'
+			, 'coverage'
 			// , 'junit'
 		],
 
@@ -87,7 +92,15 @@ module.exports = function(config) {
 
     browserify: {
       debug: true
-      , transform: [ 'babelify' ]
+      , transform: [
+				istanbul({
+					ignore: [
+						'**/node_modules/**'
+						, '**/test/**'
+					]
+				})
+				, 'babelify'
+			]
     },
 
 		// Continuous Integration mode
