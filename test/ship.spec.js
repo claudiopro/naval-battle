@@ -60,8 +60,7 @@ describe('the Ship class', function() {
       expect(ship.fits(grid, 1, 1, constants.VERTICAL)).toBeTruthy();
     });
 
-    it('returns false if the ship does not fit on the grid', function() {
-      // Empty grid
+    it('returns false if the ship does not fit on the grid - empty grid', function() {
       grid = [
         []
       ];
@@ -73,8 +72,31 @@ describe('the Ship class', function() {
       ];
       ship = new Ship(1);
       expect(ship.fits(grid, 0, 0, constants.VERTICAL)).toBeFalsy();
+    });
 
-      // Full grid
+    it('returns false if the ship does not fit on the grid - grid too small', function() {
+      grid = [
+        [W, W],
+        [W, W]
+      ];
+      ship = new Ship(3);
+      expect(ship.fits(grid, 0, 0, constants.VERTICAL)).toBeFalsy();
+      expect(ship.fits(grid, 0, 1, constants.VERTICAL)).toBeFalsy();
+      expect(ship.fits(grid, 1, 0, constants.VERTICAL)).toBeFalsy();
+      expect(ship.fits(grid, 1, 1, constants.VERTICAL)).toBeFalsy();
+
+      grid = [
+        [W, W],
+        [W, W]
+      ];
+      ship = new Ship(3);
+      expect(ship.fits(grid, 0, 0, constants.VERTICAL)).toBeFalsy();
+      expect(ship.fits(grid, 0, 1, constants.VERTICAL)).toBeFalsy();
+      expect(ship.fits(grid, 1, 0, constants.VERTICAL)).toBeFalsy();
+      expect(ship.fits(grid, 1, 1, constants.VERTICAL)).toBeFalsy();
+    });
+
+    it('returns false if the ship does not fit on the grid - full grid', function() {
       grid = [
         ['x']
       ];
