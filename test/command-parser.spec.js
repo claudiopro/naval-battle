@@ -18,13 +18,16 @@ describe('the parser module', function() {
       expect(parser.parse('C5')).toEqual({x:2, y:4});
     });
 
-    it('returns false for coors out of range', function() {
+    it('returns false for coords out of range', function() {
+      expect(parser.parse('A0')).toBe(false);
       expect(parser.parse('A11')).toBe(false);
       expect(parser.parse('A12')).toBe(false);
 
+      expect(parser.parse('C0')).toBe(false);
       expect(parser.parse('C11')).toBe(false);
       expect(parser.parse('C12')).toBe(false);
 
+      expect(parser.parse('K0')).toBe(false);
       expect(parser.parse('K1')).toBe(false);
       expect(parser.parse('K10')).toBe(false);
     });
