@@ -50,6 +50,9 @@ function print() {
   console.log(buf.join(''));
 }
 
+/**
+ * Returns the value of a square of the grid
+ */
 function value(square) {
   return (square instanceof Ship) ? constants.SHIP : square;
 }
@@ -68,6 +71,9 @@ function hit(x, y) {
   return false;
 }
 
+/**
+ *  Returns true if there are ships afloat on the board
+ */
 function hasShips() {
   return BATTLESHIPS.some(function(ship) {
     return ship.isAfloat();
