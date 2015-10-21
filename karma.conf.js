@@ -10,7 +10,7 @@ module.exports = function(config) {
 			'karma-chrome-launcher'
       , 'karma-phantomjs-launcher'
       , 'karma-jasmine'
-			, 'karma-commonjs'
+			, 'karma-browserify'
 		],
 
 
@@ -18,7 +18,7 @@ module.exports = function(config) {
 		// available frameworks: https://npmjs.org/browse/keyword/karma-adapter
 		frameworks: [
 			'jasmine'
-			, 'commonjs'
+			, 'browserify'
 		],
 
 
@@ -38,8 +38,8 @@ module.exports = function(config) {
 		// preprocess matching files before serving them to the browser
 		// available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
 		preprocessors: {
-			'*.js' : [/*'coverage',*/ 'commonjs']
-			, './test/*.spec.js' : ['commonjs']
+			'*.js' : [/*'coverage',*/ 'browserify']
+			, './test/*.spec.js' : ['browserify']
 		},
 
 		// coverageReporter: {
@@ -85,6 +85,10 @@ module.exports = function(config) {
       , 'PhantomJS'
 		],
 
+    browserify: {
+      debug: true
+      , transform: [ 'babelify' ]
+    },
 
 		// Continuous Integration mode
 		// if true, Karma captures browsers, runs the tests and exits
