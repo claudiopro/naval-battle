@@ -62,7 +62,6 @@ function value(square) {
  */
 function hit(x, y) {
   var square = grid[x][y];
-  console.log(square);
   if (square instanceof Ship) {
     if (square.hit())
       console.log('Ship sunken!');

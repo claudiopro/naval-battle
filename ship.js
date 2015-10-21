@@ -10,9 +10,7 @@ function getRandom(range) {
 }
 
 function fits(grid, x, y, direction, size) {
-  // console.log('x:',x,'y:',y,'dir:',direction,'size:',size);
   if (size < 1) {
-    // console.log('fits!')
     return true;
   }
   return (

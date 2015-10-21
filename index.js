@@ -29,10 +29,11 @@ function usage() {
 var rl = readline.createInterface(process.stdin, process.stdout);
 
 rl.setPrompt('naval-battle> ');
-rl.prompt();
 
 board.init();
 usage();
+
+rl.prompt();
 
 rl.on('line', function(line) {
   switch(line.trim()) {
@@ -51,7 +52,6 @@ rl.on('line', function(line) {
     default:
       var coords = parser.parse(line);
       if (coords) {
-        console.log('x:',coords.x,'y:',coords.y);
         if (board.hit(coords.x, coords.y)) {
           console.log('HIT!');
           if (!board.hasShips()) {
