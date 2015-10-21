@@ -80,10 +80,10 @@ describe('the Ship class', function() {
         [W, W]
       ];
       ship = new Ship(3);
-      expect(ship.fits(grid, 0, 0, constants.VERTICAL)).toBeFalsy();
-      expect(ship.fits(grid, 0, 1, constants.VERTICAL)).toBeFalsy();
-      expect(ship.fits(grid, 1, 0, constants.VERTICAL)).toBeFalsy();
-      expect(ship.fits(grid, 1, 1, constants.VERTICAL)).toBeFalsy();
+      expect(ship.fits(grid, 0, 0, constants.HORIZONTAL)).toBeFalsy();
+      expect(ship.fits(grid, 0, 1, constants.HORIZONTAL)).toBeFalsy();
+      expect(ship.fits(grid, 1, 0, constants.HORIZONTAL)).toBeFalsy();
+      expect(ship.fits(grid, 1, 1, constants.HORIZONTAL)).toBeFalsy();
 
       grid = [
         [W, W],
